@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         toast.show();
                     }
                 else {
-                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    Intent intent = new Intent(MainActivity.this, TasksActivity.class);
                     intent.putExtra(EMAIL, emailContent);
                     intent.putExtra(PASSWORD, passwordContent);
                     startActivity(intent);
