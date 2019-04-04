@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#031400"
     tools:context=".MainActivity">
 
     <ImageView
@@ -32,6 +33,7 @@
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fadingEdge="none"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.10" />
 
@@ -43,33 +45,45 @@
         app:layout_constraintGuide_percent="0.90" />
 
     <EditText
-        android:id="@+id/tv_email"
+        android:id="@+id/tv_username"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/white"
+        android:drawableStart="@drawable/person"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textCursorDrawable="@android:color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pwd"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_img" />
 
     <EditText
-        android:id="@+id/tv_pwd"
+        android:id="@+id/et_password"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/white"
+        android:cursorVisible="false"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_mid"
@@ -80,18 +94,20 @@
 
     <Button
         android:id="@+id/btn_login"
-        style="@style/Widget.AppCompat.Button"
+        style="@android:style/Widget.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/buttonbackground"
         android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:textColor="@android:color/white"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline_mid"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pwd" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <Button
         android:id="@+id/btn_register"

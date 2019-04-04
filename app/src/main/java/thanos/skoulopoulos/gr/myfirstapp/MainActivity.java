@@ -2,8 +2,10 @@ package thanos.skoulopoulos.gr.myfirstapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.FocusFinder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        passwordEditText = findViewById(R.id.tv_pwd);
-        emailEditText = (EditText) findViewById(R.id.tv_email);
+        passwordEditText = findViewById(R.id.et_password);
+        emailEditText = (EditText) findViewById(R.id.tv_username);
         loginButton = (Button) findViewById(R.id.btn_login);
         registerButton = (Button) findViewById(R.id.btn_register);
 
@@ -75,6 +77,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        emailEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO using this Drawable icon remomve  onclick
+                emailEditText.setCompoundDrawablesWithIntrinsicBounds(0,0, 0, 0);
+
+            }
+        });
+
+
+
 
 
         registerButton.setOnClickListener(new View.OnClickListener() {
