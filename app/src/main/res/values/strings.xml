@@ -8,6 +8,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="empty_username_or_password">Empty username or Password</string>
     <string name="too_small_password">Password must be at least 8 characters</string>
+    <string name="password_confirmation_is_incorrect">Password confirmation is incorrect</string>
 
 
 </resources>

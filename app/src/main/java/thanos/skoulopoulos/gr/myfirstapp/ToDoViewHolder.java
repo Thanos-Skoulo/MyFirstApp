@@ -32,4 +32,10 @@ public class ToDoViewHolder extends RecyclerView.ViewHolder{
     public TextView getDescription() {
         return description;
     }
+
+    public void bind(ToDo toDO) {
+        title.setText(toDO.getTitle());
+        description.setText(toDO.getDescription());
+        isdone.setChecked(toDO.getIsDone());
+    }
 }

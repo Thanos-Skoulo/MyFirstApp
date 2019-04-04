@@ -7,40 +7,36 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoViewHolder> {
 
-    ArrayList<ToDO> myToDoList = new ArrayList<ToDO>();
+    ArrayList<ToDo> myToDoList = new ArrayList<ToDo>();
 
     public ToDoAdapter()
     {
-        myToDoList.add(new ToDO("My First Task", "Added My First Todo in the list", true));
-        myToDoList.add(new ToDO("Second Task","Added second task", false));
+        myToDoList.add(new ToDo("My First Task", "Added My First Todo in the list", true));
+        myToDoList.add(new ToDo("Second Task","Added second task", false));
     }
 
     @NonNull
     @Override
     public ToDoViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-       View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_todo, viewGroup, false);
-
-        return new ToDoViewHolder(view);
+        return new ToDoViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_todo, viewGroup, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ToDoViewHolder toDoViewHolder, int position) {
-
-        ToDO toDO = myToDoList.get(position);
-
-        toDoViewHolder.getTitle().setText(toDO.getTitle());
-        toDoViewHolder.getIsdone().setChecked(toDO.getIsDone());
-        toDoViewHolder.getDescription().setText(toDO.getDescription());
-
+        toDoViewHolder.bind(myToDoList.get(position));
     }
 
     @Override
     public int getItemCount() {
         return myToDoList.size();
+    }
+
+    public void add(ToDo newToDo) {
+        myToDoList.add(newToDo);
+        notifyDataSetChanged();
     }
 }
 

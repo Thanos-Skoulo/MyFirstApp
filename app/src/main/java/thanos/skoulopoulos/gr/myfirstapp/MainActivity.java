@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
+
+
+
         passwordEditText = findViewById(R.id.tv_pwd);
         emailEditText = (EditText) findViewById(R.id.tv_email);
         loginButton = (Button) findViewById(R.id.btn_login);

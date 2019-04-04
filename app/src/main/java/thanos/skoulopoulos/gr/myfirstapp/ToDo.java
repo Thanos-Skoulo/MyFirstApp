@@ -1,12 +1,12 @@
 package thanos.skoulopoulos.gr.myfirstapp;
 
-public class ToDO {
+public class ToDo {
 
     String title;
     String description;
     boolean isDone;
 
-    public ToDO(String title, String description, boolean isDone){
+    public ToDo(String title, String description, boolean isDone){
 
         setTitle(title);
         setDescription(description);

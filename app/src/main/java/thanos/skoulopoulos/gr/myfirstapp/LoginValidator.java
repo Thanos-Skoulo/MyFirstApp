@@ -1,5 +1,8 @@
 package thanos.skoulopoulos.gr.myfirstapp;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginValidator {
 
     public boolean checkValuesAreEmpty(String username,String password){
@@ -12,5 +15,12 @@ public class LoginValidator {
 
         return  password.length() < 7;
 
+    }
+
+
+
+    public boolean checkPasswordConfirmation (String password, String passwordConfirmation){
+
+        return  !password.equals(passwordConfirmation);
     }
 }

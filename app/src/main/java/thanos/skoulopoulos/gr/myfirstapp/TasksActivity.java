@@ -21,6 +21,7 @@ public class TasksActivity extends AppCompatActivity {
     public static final int ADD_TASK = 1;
     TextView emailView;
     private RecyclerView toDoListView;
+    private ToDoAdapter adapter;
 
 
     @Override
@@ -36,27 +37,23 @@ public class TasksActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         toDoListView.setLayoutManager(layoutManager);
-        ToDoAdapter adapter = new ToDoAdapter();
+        adapter = new ToDoAdapter();
         toDoListView.setAdapter(adapter);
 
         fab.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View v) {
-                                       startActivityForResult(new Intent(TasksActivity.this, AddTaskActivity.class),ADD_TASK);
-                                   }
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(TasksActivity.this, AddTaskActivity.class), ADD_TASK);
+            }
 
         });
 
         Intent intent = getIntent();
-        if (intent != null)
-        {
+        if (intent != null) {
             String email = intent.getStringExtra(MainActivity.EMAIL);
 
             emailView.setText(email);
         }
-
-
-
     }
 
     @Override
@@ -64,31 +61,20 @@ public class TasksActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
 
+        if (requestCode == ADD_TASK) {
+            if (resultCode == RESULT_OK) {
 
-        if (requestCode == ADD_TASK){
-            if(resultCode == RESULT_OK){
+                String textTask = data.getStringExtra(TASK_CREATION);
+                String textDiscription = data.getStringExtra(DESCRIPTION_CREATION);
 
-                Context contextTask = getApplicationContext();
-                final Context contextDiscription = getApplicationContext();
-                CharSequence textTask = data.getStringExtra(TASK_CREATION);
-                final CharSequence textDiscription = data.getStringExtra(DESCRIPTION_CREATION);
-                int duration = Toast.LENGTH_SHORT;
+                ToDo newToDo = new ToDo(textTask,textDiscription,false);
+                adapter.add(newToDo);
 
-                Toast toastTask = Toast.makeText(contextTask,textTask , duration);
-                toastTask.show();
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        int duration = Toast.LENGTH_SHORT;
-                        Toast toastTask = Toast.makeText(contextDiscription, textDiscription, duration);
-                        toastTask.show();
-                    }
-                    },2000);
-                }
 
             }
+
         }
+    }
 }
 
 

@@ -36,8 +36,5 @@ public class AddTaskActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
     }
 }

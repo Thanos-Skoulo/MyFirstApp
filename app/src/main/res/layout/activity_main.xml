@@ -15,8 +15,10 @@
         android:src="@drawable/login_img"
         app:layout_constraintBottom_toTopOf="@+id/guideline_img"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/login_img" />
 
     <android.support.constraint.Guideline
@@ -97,14 +99,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="If you don't have an account click here!"
+        android:text="If you don't have an account click here! "
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toTopOf="@+id/guideline_mid"
-        tools:text="If you don't have an account click here!" />
+        app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
 </android.support.constraint.ConstraintLayout>
