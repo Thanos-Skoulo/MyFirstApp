@@ -9,6 +9,12 @@
     <string name="empty_username_or_password">Empty username or Password</string>
     <string name="too_small_password">Password must be at least 8 characters</string>
     <string name="password_confirmation_is_incorrect">Password confirmation is incorrect</string>
+    <string name="if_you_forgot_your_password">If you forgot your Password</string>
+    <string name="if_you_forgot_your_password_click_here">if you forgot your password click here!!</string>
+    <string name="popup">PopUp</string>
+    <string name="pop_up">Pop Up</string>
+    <string name="forgot_your_password">Forgot Your Password?</string>
+    <string name="e_mail_address">E-mail Address:</string>
 
 
 </resources>
