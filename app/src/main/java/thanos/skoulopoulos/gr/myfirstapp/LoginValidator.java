@@ -17,6 +17,11 @@ public class LoginValidator {
 
     }
 
+    public boolean checkAtLeastOneNumb(String password){
+
+        return !Pattern.compile(".*\\d+.*").matcher(password).matches();
+    }
+
 
 
     public boolean checkPasswordConfirmation (String password, String passwordConfirmation){
