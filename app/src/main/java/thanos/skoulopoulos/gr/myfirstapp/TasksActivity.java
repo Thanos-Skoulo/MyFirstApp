@@ -2,6 +2,7 @@ package thanos.skoulopoulos.gr.myfirstapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +24,14 @@ public class TasksActivity extends AppCompatActivity {
     TextView emailView;
     private RecyclerView toDoListView;
     private ToDoAdapter adapter;
+    Button button_logout;
+    SharedPreferences sharedPreferences;
+
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
@@ -54,6 +60,23 @@ public class TasksActivity extends AppCompatActivity {
 
             emailView.setText(email);
         }
+
+        button_logout = findViewById(R.id.button_logout);
+
+        button_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.app_name),Context.MODE_PRIVATE);
+
+                sharedPreferences.edit().clear().apply();
+
+                startActivity(new Intent(TasksActivity.this,MainActivity.class));
+
+            }
+        });
+
+
     }
 
     @Override

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button loginButton;
     Button registerButton;
-    EditText emailEditText;
+    public EditText emailEditText;
     EditText passwordEditText;
     TextView forgotPassword;
     String emailContent;
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.btn_login);
         registerButton = (Button) findViewById(R.id.btn_register);
         forgotPassword = findViewById(R.id.tv_forgotPassword);
+
+
 
         if(savedUsername != ""){
             emailEditText.setText(savedUsername);
@@ -95,37 +97,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        emailEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO using this Drawable icon remomve  onclick
-                emailEditText.setCompoundDrawablesWithIntrinsicBounds(0,0, 0, 0);
-
-            }
-
-        });
-
-        emailEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if (!emailEditText.isFocused()){
-                    emailEditText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.person,0, 0, 0);
-                }
-            }
-        });
-
-        passwordEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0);
-            }
-        });
-
+//        emailEditText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //TODO using this Drawable icon remomve  onclick
+//                emailEditText.setCompoundDrawablesWithIntrinsicBounds(0,0, 0, 0);
 //
+//            }
+//
+//        });
+
+//        emailEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View view, boolean b) {
+//                if (!emailEditText.isActivated()){
+//                    emailEditText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.person,0, 0, 0);
+//                }
+//            }
+//        });
+
+//        passwordEditText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0);
+//            }
+//        });
+
+
 //        passwordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 //            @Override
 //            public void onFocusChange(View view, boolean b) {
-//                if(!passwordEditText.setCompoundDrawablesWithIntrinsicBounds(@android.R.drawable.ic_lock_idle_lock);)
+//                if(!passwordEditText.isFocused()){
+//                    passwordEditText.setCompoundDrawablesWithIntrinsicBounds(,0,0,0);
+//                }
 //            }
 //        });
 
